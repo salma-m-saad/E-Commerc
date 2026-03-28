@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Ecom.core.Entities;
 namespace Ecom.infrastructure.Data
 {
-    public class AppDbContext:IdentityDbContext<AppUser>
+    public class AppDbContext:IdentityDbContext<AppUser>  
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

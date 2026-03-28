@@ -22,6 +22,7 @@ namespace Ecom.Api
             //{
             //    cfg.AddProfile<CategoryMapping>();
             //});
+            
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddSingleton<IFileProvider>(sp =>
             {
@@ -38,10 +39,12 @@ namespace Ecom.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
             app.UseHttpsRedirection();
-
-            app.UseAuthorization();
+            
 
 
             app.MapControllers();
